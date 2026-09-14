@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --forest: #1f4a3f;
+  --forest-dark: #14332b;
+  --forest-tint: #e7efe9;
+  --cream: #f3e7c6;
+  --cream-soft: #f8efd9;
+  --paper: #fffcf5;
+  --clay: #c1622d;
+  --clay-dark: #a24f22;
+  --ink: #22302c;
+}
+
+@theme inline {
+  --color-forest: var(--forest);
+  --color-forest-dark: var(--forest-dark);
+  --color-forest-tint: var(--forest-tint);
+  --color-cream: var(--cream);
+  --color-cream-soft: var(--cream-soft);
+  --color-paper: var(--paper);
+  --color-clay: var(--clay);
+  --color-clay-dark: var(--clay-dark);
+  --color-ink: var(--ink);
+  --font-display: "Fredoka", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+}
+
+* {
+  border-color: var(--forest-tint);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Wavy ripple divider, echoing the logo's dip ripple */
+.ripple-divider {
+  display: block;
+  width: 100%;
+  height: 64px;
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Soft blob background shape used behind hero illustration */
+.blob-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--cream-soft);
+  border-radius: 62% 38% 55% 45% / 48% 45% 55% 52%;
+}
+
+/* Custom scrollbar tone (non-essential, plain CSS) */
+::selection {
+  background: var(--clay);
+  color: var(--paper);
+}
