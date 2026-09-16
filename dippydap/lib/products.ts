@@ -14,10 +14,10 @@ export type Product = {
   tagline: string;
   description: string;
   accent: string; // hex used for this product's illustration/tag
+  image: string;  // path relative to /public
   nutrition: Nutrition;
   price: {
     estimate: string;
-    reasoning: string;
   };
   vegan?: boolean;
 };
@@ -31,6 +31,7 @@ export const products: Product[] = [
     description:
       "A slow-blended cottage cheese dip with roasted garlic, basil, and a whisper of black pepper — built for a thick, spoonable texture that holds onto every chip.",
     accent: "#D9A441",
+    image: "/images/italian_cheesy.png",
     nutrition: {
       servingSize: "30 g",
       calories: 42,
@@ -41,8 +42,6 @@ export const products: Product[] = [
     },
     price: {
       estimate: "₹149 for 150 g",
-      reasoning:
-        "Cottage cheese is the priciest base of the three, and the herb blend adds a small premium. Estimate factors ingredient cost (~38%), cold-chain transport since it's dairy-based (~20%), recyclable tub packaging (~12%), and margin/overhead (~30%).",
     },
   },
   {
@@ -53,6 +52,7 @@ export const products: Product[] = [
     description:
       "Thick strained yogurt whisked with roasted cumin, coriander, and a light chaat masala blend — a tangy, cooling dip with a gentle kick.",
     accent: "#C1622D",
+    image: "/images/indian_masala.png",
     nutrition: {
       servingSize: "30 g",
       calories: 34,
@@ -63,18 +63,17 @@ export const products: Product[] = [
     },
     price: {
       estimate: "₹129 for 150 g",
-      reasoning:
-        "Yogurt is a cheaper, locally-abundant base than cottage cheese, keeping ingredient cost down (~32%). Spice sourcing adds a modest cost. Cold-chain transport (~18%), packaging (~12%), margin/overhead (~38%).",
     },
   },
   {
-    slug: "sweet-chilli-honey",
-    name: "Sweet Chilli & Honey",
+    slug: "garlic-butter",
+    name: "Garlic Butter",
     base: "Chickpea base (vegan)",
-    tagline: "Sweet heat, plant-powered",
+    tagline: "Rich, garlicky, and plant-powered",
     description:
-      "Blended chickpeas with red chilli, a touch of raw honey, and roasted garlic — a naturally sweet-and-spicy dip that's entirely dairy-free.",
+      "Blended chickpeas with slow-roasted garlic and a smooth butter-forward finish — a rich, savory dip that's entirely dairy-free and built for serious snackers.",
     accent: "#E0A93E",
+    image: "/images/garlic_butter.png",
     nutrition: {
       servingSize: "30 g",
       calories: 38,
@@ -85,8 +84,6 @@ export const products: Product[] = [
     },
     price: {
       estimate: "₹139 for 150 g",
-      reasoning:
-        "Chickpeas are inexpensive, but this is priced closer to the dairy dips because it doesn't need refrigerated transport (offsetting savings go into ingredient quality — raw honey, ambient-stable packaging) and to reflect typical vegan-line premium positioning. Ingredients (~30%), transport (~14%, no cold chain needed), packaging (~14%), margin/overhead (~42%).",
     },
     vegan: true,
   },

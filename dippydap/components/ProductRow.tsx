@@ -1,5 +1,5 @@
+import Image from "next/image";
 import type { Product } from "@/lib/products";
-import { DipBowl } from "./illustrations/DipBowl";
 
 type ProductRowProps = {
   product: Product;
@@ -14,8 +14,20 @@ export function ProductRow({ product, reverse, onNotify }: ProductRowProps) {
         reverse ? "lg:[&>*:first-child]:order-2" : ""
       }`}
     >
-      <div className="mx-auto w-full max-w-xs sm:max-w-sm">
-        <DipBowl accent={product.accent} className="w-full" />
+      {/* Product image — 2:3 portrait to match 1024×1536 px photos */}
+      <div className="mx-auto w-full max-w-[220px] sm:max-w-[260px]">
+        <div
+          className="relative w-full overflow-hidden rounded-2xl "
+          style={{ aspectRatio: "2/3" }}
+        >
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            sizes="(max-width: 640px) 55vw, (max-width: 1024px) 30vw, 260px"
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <div>
@@ -48,9 +60,6 @@ export function ProductRow({ product, reverse, onNotify }: ProductRowProps) {
         <div className="mt-6 rounded-2xl bg-cream-soft p-4">
           <p className="font-display text-lg font-semibold text-forest">
             {product.price.estimate}
-          </p>
-          <p className="mt-1 text-xs leading-relaxed text-ink/70">
-            {product.price.reasoning}
           </p>
         </div>
 

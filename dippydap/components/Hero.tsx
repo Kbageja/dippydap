@@ -1,4 +1,4 @@
-import { HeroCollage } from "./illustrations/HeroCollage";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -32,8 +32,19 @@ export function Hero() {
             </a>
           </div>
         </div>
+
+        {/* Image column — uses natural 3:2 ratio so nothing is cropped or squished */}
         <div className="order-1 lg:order-2">
-          <HeroCollage />
+          <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl" style={{ aspectRatio: "3/2" }}>
+            <Image
+              src="/images/hero_section.png"
+              alt="DippyDap dips — Italian Cheesy, Indian Masala, and Sweet Chilli & Honey"
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 768px"
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
