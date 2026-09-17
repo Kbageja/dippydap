@@ -12,7 +12,7 @@ export function WaveDivider({ flip = false, color = "var(--cream-soft)" }: WaveD
         preserveAspectRatio="none"
       >
         <path
-          d="M0 30 C150 60 300 0 450 30 C600 60 750 0 900 30 C1000 50 1100 40 1200 25 L1200 60 L0 60 Z"
+          d="M0 30 C150 60 300 0 450 30 C600 60 750 0 900 30 C1000 50 1100 40 1200 25 L1200 0 L0 0 Z"
           fill={color}
         />
       </svg>
