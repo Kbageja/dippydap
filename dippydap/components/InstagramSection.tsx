@@ -10,8 +10,8 @@ export function InstagramSection() {
           Join our community
         </h2>
         <div className="mt-4 text-lg text-ink/70">
-          Follow us on Instagram for new updates and offers. <br />
-          <div className="font-medium mt-1"><em>LETS BUILD THIS TOGETHER</em></div>
+          Follow us on Instagram for new updates and Pre-Launch offers. <br />
+        
         </div>
         
         <a 
