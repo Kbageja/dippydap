@@ -9,10 +9,10 @@ export function InstagramSection() {
         <h2 className="font-display text-4xl font-semibold text-forest sm:text-5xl">
           Join our community
         </h2>
-        <p className="mt-4 text-lg text-ink/70">
+        <div className="mt-4 text-lg text-ink/70">
           Follow us on Instagram for new updates and offers. <br />
-          <p className="font-medium"><em>LETS BUILD THIS TOGETHER</em></p>
-        </p>
+          <div className="font-medium mt-1"><em>LETS BUILD THIS TOGETHER</em></div>
+        </div>
         
         <a 
           href="https://instagram.com/thedippydap" 
