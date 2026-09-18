@@ -24,12 +24,7 @@ export function Hero() {
             >
               Explore the dips
             </a>
-            <a
-              href="#notify-form"
-              className="rounded-full border border-forest px-7 py-3 text-center text-sm font-medium text-forest transition-colors hover:bg-forest-tint"
-            >
-              Notify me at launch
-            </a>
+         
           </div>
         </div>
 

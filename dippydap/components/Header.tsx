@@ -8,9 +8,9 @@ export function Header() {
           <Image
             src="/images/logo.png"
             alt="DippyDap"
-            width={40}
-            height={40}
-            className="h-10 w-10 rounded-full object-cover"
+            width={60}
+            height={60}
+            className="h-14 w-14 rounded-full object-cover"
             priority
           />
           <span className="font-display text-lg font-semibold text-forest">

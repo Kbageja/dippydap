@@ -41,7 +41,7 @@ export const products: Product[] = [
       fiberG: 0.3,
     },
     price: {
-      estimate: "₹149 for 150 g",
+      estimate: "₹199 for 300 g",
     },
   },
   {
@@ -62,7 +62,7 @@ export const products: Product[] = [
       fiberG: 0.4,
     },
     price: {
-      estimate: "₹129 for 150 g",
+      estimate: "₹199 for 300 g",
     },
   },
   {
@@ -83,7 +83,7 @@ export const products: Product[] = [
       fiberG: 1.1,
     },
     price: {
-      estimate: "₹139 for 150 g",
+      estimate: "₹199 for 300 g",
     },
     vegan: true,
   },

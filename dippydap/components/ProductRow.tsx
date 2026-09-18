@@ -26,6 +26,7 @@ export function ProductRow({ product, reverse, onNotify }: ProductRowProps) {
             fill
             sizes="(max-width: 640px) 55vw, (max-width: 1024px) 30vw, 260px"
             className="object-cover"
+            priority
           />
         </div>
       </div>

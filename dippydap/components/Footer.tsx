@@ -4,7 +4,7 @@ import { WaveDivider } from "./WaveDivider";
 export function Footer() {
   return (
     <footer className="bg-forest text-cream-soft">
-      <WaveDivider color="var(--cream-soft)" />
+    
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 py-10 text-center sm:px-8">
         <Image
           src="/images/logo.png"

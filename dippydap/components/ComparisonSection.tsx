@@ -38,7 +38,7 @@ function Check() {
   return (
     <span
       aria-label="Yes"
-      className="inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-forest text-paper text-sm font-bold"
+      className="inline-flex h-4 w-4 sm:h-6 sm:w-6 flex-shrink-0 items-center justify-center rounded-full bg-forest text-paper text-[10px] sm:text-sm font-bold"
     >
       ✓
     </span>
@@ -49,7 +49,7 @@ function Cross() {
   return (
     <span
       aria-label="No"
-      className="inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-clay/20 text-clay text-sm font-bold"
+      className="inline-flex h-4 w-4 sm:h-6 sm:w-6 flex-shrink-0 items-center justify-center rounded-full bg-clay/20 text-clay text-[10px] sm:text-sm font-bold"
     >
       ✕
     </span>
@@ -70,7 +70,7 @@ export function ComparisonSection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-24">
+      <div className="relative mx-auto max-w-4xl px-3 py-16 sm:px-8 sm:py-24">
         {/* ── Section header ── */}
         <div className="mx-auto max-w-xl text-center">
           <h2 className="mt-2 font-display text-4xl font-semibold text-forest sm:text-5xl">
@@ -82,15 +82,15 @@ export function ComparisonSection() {
         </div>
 
         {/* ── Table card ── */}
-        <div className="mt-10 sm:mt-14 overflow-hidden rounded-3xl shadow-xl ring-1 ring-forest/10">
-          <table className="w-full border-collapse">
+        <div className="mt-10 sm:mt-14 overflow-hidden rounded-xl sm:rounded-3xl shadow-xl ring-1 ring-forest/10">
+          <table className="w-full border-collapse table-fixed">
             {/* ── Column headers ── */}
             <thead>
               <tr>
                 {/* Feature label column */}
                 <th
                   scope="col"
-                  className="w-[30%] bg-cream-soft px-4 py-5 text-left font-display text-base font-semibold text-forest sm:px-6 sm:text-lg"
+                  className="w-[28%] bg-cream-soft p-2 sm:px-6 sm:py-5 text-left font-display text-xs font-semibold text-forest sm:text-lg align-bottom"
                 >
                   Feature
                 </th>
@@ -98,15 +98,15 @@ export function ComparisonSection() {
                 {/* DippyDap column header */}
                 <th
                   scope="col"
-                  className="w-[35%] px-4 py-5 text-left font-display text-base font-semibold text-forest sm:px-6 sm:text-lg bg-transparent"
+                  className="w-[36%] p-2 sm:px-6 sm:py-5 text-left font-display text-xs font-semibold text-forest sm:text-lg bg-transparent align-bottom"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="relative h-24 w-16 sm:h-28 sm:w-20 flex-shrink-0">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-3">
+                    <div className="relative h-16 w-10 sm:h-28 sm:w-20 flex-shrink-0">
                       <Image
                         src="/images/italian_cheesy.png"
                         alt="DippyDap Italian Cheesy jar"
                         fill
-                        sizes="112px"
+                        sizes="(max-width: 640px) 40px, 80px"
                         className="object-contain"
                         priority
                       />
@@ -118,15 +118,15 @@ export function ComparisonSection() {
                 {/* Regular Mayo column header */}
                 <th
                   scope="col"
-                  className="w-[35%] px-4 py-5 text-left font-display text-base font-semibold text-ink sm:px-6 sm:text-lg bg-transparent"
+                  className="w-[36%] p-2 sm:px-6 sm:py-5 text-left font-display text-xs font-semibold text-ink sm:text-lg bg-transparent align-bottom"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="relative h-24 w-16 sm:h-28 sm:w-20 flex-shrink-0">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-3">
+                    <div className="relative h-16 w-10 sm:h-28 sm:w-20 flex-shrink-0">
                       <Image
                         src="/images/normal_mayo.png"
                         alt="Regular mayonnaise jar"
                         fill
-                        sizes="112px"
+                        sizes="(max-width: 640px) 40px, 80px"
                         className="object-contain"
                         priority
                       />
@@ -144,27 +144,27 @@ export function ComparisonSection() {
                 return (
                   <tr key={row.feature} className={isEven ? "bg-paper" : "bg-cream-soft/60"}>
                     {/* Feature name */}
-                    <td className="px-4 py-4 sm:px-6 sm:py-5">
-                      <span className="font-display text-sm font-semibold text-forest sm:text-base">
+                    <td className="p-2 sm:px-6 sm:py-5 align-top sm:align-middle border-t border-forest/5">
+                      <span className="font-display text-[10px] sm:text-sm font-semibold text-forest sm:text-base block">
                         {row.feature}
                       </span>
                     </td>
 
                     {/* DippyDap cell */}
-                    <td className="bg-forest/5 px-4 py-4 sm:px-6 sm:py-5">
-                      <div className="flex items-start gap-2">
+                    <td className="bg-forest/5 p-2 sm:px-6 sm:py-5 align-top sm:align-middle border-t border-forest/5">
+                      <div className="flex flex-col sm:flex-row items-start gap-1 sm:gap-2">
                         <Check />
-                        <span className="text-xs leading-snug text-ink sm:text-sm">
+                        <span className="text-[10px] leading-tight text-ink sm:text-sm sm:leading-snug">
                           {row.dippydap}
                         </span>
                       </div>
                     </td>
 
                     {/* Mayo cell */}
-                    <td className="px-4 py-4 sm:px-6 sm:py-5">
-                      <div className="flex items-start gap-2">
+                    <td className="p-2 sm:px-6 sm:py-5 align-top sm:align-middle border-t border-forest/5">
+                      <div className="flex flex-col sm:flex-row items-start gap-1 sm:gap-2">
                         {row.mayoWins ? <Check /> : <Cross />}
-                        <span className="text-xs leading-snug text-ink/70 sm:text-sm">
+                        <span className="text-[10px] leading-tight text-ink/70 sm:text-sm sm:leading-snug">
                           {row.mayo}
                         </span>
                       </div>
