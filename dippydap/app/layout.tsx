@@ -8,7 +8,7 @@ import "@fontsource/work-sans/600.css";
 import "./globals.css";
 import { products } from "@/lib/products";
 
-const siteUrl = "https://dippydap.example.com";
+const siteUrl = "https://dippydap.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -65,12 +65,13 @@ export default function RootLayout({
       ...products.map((p) => ({
         "@type": "Product",
         name: `DippyDap ${p.name}`,
+        image: `${siteUrl}${p.image}`,
         description: p.description,
         brand: { "@type": "Brand", name: "DippyDap" },
         offers: {
           "@type": "Offer",
           priceCurrency: "INR",
-          price: p.price.estimate.replace(/[^\d.]/g, ""),
+          price: p.price.estimate.match(/[\d.]+/)?.[0] || "0",
           availability: "https://schema.org/PreOrder",
         },
       })),

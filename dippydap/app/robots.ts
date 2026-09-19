@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://dippydap.vercel.app/sitemap.xml",
+    sitemap: "https://dippydap.com/sitemap.xml",
   };
 }
